@@ -1,0 +1,6 @@
+{
+    "code-runner.runInTerminal": true,
+    "code-runner.saveFileBeforeRun": true,
+    "C_Cpp.errorSquiggles": "Enabled",
+    "php.validate.executablePath": "php"
+}

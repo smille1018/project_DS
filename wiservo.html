@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="author" content="Igor Fonseca Albuquerque">
+<title>Wi-servo - Interface</title>
+
+<script src="jquery.js"></script>
+
+<script>
+
+$.ajaxSetup({timeout:1000});
+
+
+function mouseUpSr1(angle)
+{
+	TextVar = myform2.inputbox.value;
+	ArduinoVar = "http://" + TextVar + ":80";
+	$.get( ArduinoVar, { "sr1": angle })	;
+	{Connection: close};
+}
+function mouseUpSr2(angle)
+{
+	TextVar = myform2.inputbox.value;
+	ArduinoVar = "http://" + TextVar + ":80";
+	$.get( ArduinoVar, { "sr2": angle })	;
+	{Connection: close};
+}
+
+</script>
+
+</head>
+
+
+<body>
+
+<h1> <b> Wi-servo </b> </h1>
+
+<div style="margin: 0; width:500px; height:80px;">
+	<FORM NAME="myform2" ACTION="" METHOD="GET">
+		ESP8266 IP Address:
+		<INPUT TYPE="text" NAME="inputbox" VALUE="192.168.0.33">
+	</FORM>
+</div>
+
+
+<h3> Servo 1 </h3>
+<input type="range" min="20" max="170" onmouseup="mouseUpSr1(this.value)" />
+<h3> Servo 2 </h3>
+<input type="range" min="20" max="170" onmouseup="mouseUpSr2(this.value)" />
+
+
+</body>
+</html>
